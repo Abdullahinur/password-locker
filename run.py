@@ -127,6 +127,27 @@ def main():
         else:
             print("That user does not exist")
 
+    elif phrases == 'del':
+
+        print("Enter the first name of the user you want to delete:")
+
+        delete_user = input()
+
+        if check_existing_users(delete_user):
+
+            search_delete_user = find_user(delete_user)
+
+            print(f"The following user: {search_delete_user.first_name} {search_delete_user.last_name} has been deleted")
+
+            delete_user(search_delete_user)
+
+        else:
+            print("That user does not exist")
+
+    elif phrases == 'copy':
+
+        print("Enter the numver")
+
 
 if __name__ == '__main__':
     main()
