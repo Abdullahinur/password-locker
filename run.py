@@ -36,3 +36,10 @@ def check_existing_users(fname):
     Function that checks if a contact exists with that first name and returns a boolean
     '''
     return User.user_exist(fname)
+
+
+def display_users():
+    '''
+    Function that returns all the saved user_list
+    '''
+    return User.display_users()
