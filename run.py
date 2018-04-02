@@ -53,4 +53,16 @@ def copy_existing_email(fname):
     return User.copy_email(fname)
 
 
-def main()
+def main():
+    print("\n")
+    print("Welcome to Ab's PassWord Locker")
+    print("This will store your credentails and generate a password for you")
+    print("My name is Ab,")
+    print("What's yours")
+    user_name = input()
+
+    print(f"Hello {user_name}. what can i do for you?")
+
+
+if __name__ == '__main__':
+    main()
