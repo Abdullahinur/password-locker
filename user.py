@@ -32,4 +32,10 @@ class User:
         for user in cls.user_list:
             if user.first_name == first_name:
                 return True
+
+    @classmethod
+    def display_user(cls):
+
+        return cls.user_list
+
         return False

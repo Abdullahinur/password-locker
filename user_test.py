@@ -59,6 +59,10 @@ class TestUser(unittest.TestCase):
 
         self.assertTrue(user_exists)
 
+    def test_display_all_users(self):
+
+        self.assertEqual(User.display_user(), User.user_list)
+
 
 if __name__ == '__main__':
     unittest.main()
