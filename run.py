@@ -29,3 +29,10 @@ def find_user(fname):
     Function that finds a user by their first name
     '''
     return User.find_by_firstName(fname)
+
+
+def check_existing_users(fname):
+    '''
+    Function that checks if a contact exists with that first name and returns a boolean
+    '''
+    return User.user_exist(fname)
