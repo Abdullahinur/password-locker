@@ -43,3 +43,14 @@ def display_users():
     Function that returns all the saved user_list
     '''
     return User.display_users()
+
+
+def copy_existing_email(fname):
+    '''
+    Function that copys the Firstname of a user to the machine #### This will be changed
+    '''
+
+    return User.copy_email(fname)
+
+
+def main()
