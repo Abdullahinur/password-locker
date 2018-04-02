@@ -10,18 +10,18 @@ def create_user(fname, lname, email):
     return new_user
 
 
-def save_users(User):
+def save_users(user):
     '''
     Function to save user
     '''
     user.save_user()
 
 
-def del_contact(contact):
+def del_user(user):
     '''
     Function to delete a contact
     '''
-    contact.delete_contact()
+    user.delete_user()
 
 
 def find_contact(number):
