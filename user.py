@@ -34,7 +34,7 @@ class User:
                 return True
 
     @classmethod
-    def display_user(cls):
+    def display_users(cls):
 
         return cls.user_list
 

@@ -88,6 +88,45 @@ def main():
         print(f"Welcome NEW USER: {first_name}")
         print("\n")
 
+    elif phrases == 'display':
+
+        if display_users():
+
+            print("Here is a list of current users")
+            print("\n")
+            for user in display_users():
+
+                print(f"{user.first_name} {user.last_name}.............{user.email}")
+
+            print("\n")
+
+        else:
+
+            print("\n")
+
+            print("There aren't any users yet")
+
+            print("\n")
+
+    elif phrases == 'find':
+
+        print("Enter the first name of the user you want to search for")
+
+        search_firstName = input()
+
+        if check_existing_users(search_firstName):
+
+            search_user = find_user(search_firstName)
+
+            print(f"{search_user.first_name} {search_user.last_name}")
+
+            print('-' * 20)
+
+            print(f"Email ....{search_user.email}")
+
+        else:
+            print("That user does not exist")
+
 
 if __name__ == '__main__':
     main()
