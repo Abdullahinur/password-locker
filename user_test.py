@@ -63,6 +63,13 @@ class TestUser(unittest.TestCase):
 
         self.assertEqual(User.display_user(), User.user_list)
 
+    # def test_copy_email(self):
+    #
+    #     self.new_user.save_user()
+    #     User.copy_email("")
+    #
+    #     self.assertEqual(self.new_user.email, pyperclip.paste())
+
 
 if __name__ == '__main__':
     unittest.main()
