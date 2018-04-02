@@ -67,8 +67,8 @@ class User:
         return cls.user_list
 
     @classmethod
-    def copy_email(cls, number):
-        user_found = User.find_by_number(number)
-        pyperclip.copy(user_found.number)
+    def copy_email(cls, email):
+        user_found = User.find_by_number(email)
+        pyperclip.copy(user_found.email)
 
         return False

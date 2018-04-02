@@ -1,4 +1,5 @@
 #!/usr/bin/env python3.6
+import pyperclip
 from user import User
 
 
@@ -17,7 +18,7 @@ def save_users(user):
     user.save_user()
 
 
-def del_user(user):
+def delete_user(user):
     '''
     Function to delete a contact
     '''
@@ -45,12 +46,12 @@ def display_users():
     return User.display_users()
 
 
-def copy_existing_email(fname):
+def copy_existing_email(phone_number):
     '''
     Function that copys the Firstname of a user to the machine #### This will be changed
     '''
 
-    return User.copy_email(fname)
+    return User.copy_email(phone_number)
 
 
 def main():
@@ -127,7 +128,11 @@ def main():
 
             if check_existing_users(search_number):
 
+                print('-' * 20)
+
                 search_user = find_user(search_number)
+
+                print("Here is the account associated with that number")
 
                 print(f"{search_user.first_name} {search_user.last_name}")
 
@@ -171,19 +176,19 @@ def main():
 
                 paste_user_email = pyperclip.paste()
 
-                print(f"{ pyperclip.paste()} belongs to {user_found.first_name} {user_found.last_name}")
+                print(f"{ pyperclip.paste()} which belongs to {user_found.first_name} {user_found.last_name} has been pasted to your clipboard")
 
             else:
 
                 print("The contact does not exist")
 
-        elif short_code == 'exit':
+        elif phrases == 'exit':
 
             print("Bye .........")
 
         else:
 
-            print("I really didn't get that. Please use the short codes")
+            print("I really didn't get that. Please use the short phrases")
 
 
 if __name__ == '__main__':
