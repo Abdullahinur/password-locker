@@ -18,3 +18,18 @@ class User:
     def delete_user(self):
 
         User.user_list.remove(self)
+
+    @classmethod
+    def find_by_firstName(cls, first_name):
+
+        for user in cls.user_list:
+            if user.first_name == first_name:
+                return user
+
+    @classmethod
+    def user_exist(cls, first_name):
+
+        for user in cls.user_list:
+            if user.first_name == first_name:
+                return True
+        return False
