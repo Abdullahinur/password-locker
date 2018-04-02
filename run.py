@@ -2,11 +2,11 @@
 from user import User
 
 
-def create_user(fname, lname, email):
+def create_user(first_name, last_name, email):
     '''
     Function to create a new user
     '''
-    new_user = Contact(fname, lname, email)
+    new_user = User(first_name, last_name, email)
     return new_user
 
 
@@ -61,7 +61,32 @@ def main():
     print("What's yours")
     user_name = input()
 
-    print(f"Hello {user_name}. what can i do for you?")
+    print(f"Hello {user_name}.")
+    print("You can use this program by typing some simple phrases")
+    print("Here are some phrases to get you started: # new - create new user, # display - displays the users, # find - find a user, # del - del a user, # copy - copy user info, # exit - exit the password locker")
+
+    phrases = input().lower()
+
+    if phrases == 'new':
+        print("New User")
+        print("-" * 10)
+
+        print("What is your First Name:")
+        first_name = input()
+
+        print("What is your last Name:")
+        last_name = input()
+
+        print("What is your email address:")
+        email = input()
+
+        # Create and save a new user
+        save_users(create_user(first_name, last_name, email))
+
+        print("\n")
+        print("\n")
+        print(f"Welcome NEW USER: {first_name}")
+        print("\n")
 
 
 if __name__ == '__main__':
