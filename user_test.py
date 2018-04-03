@@ -6,7 +6,7 @@ class TestUser(unittest.TestCase):
 
     def setUp(self):
 
-        self.new_user = User("Abdullahinur", "Abdullahi", "aabdullahinur@gmail.com")
+        self.new_user = User("Abdullahinur", "Abdullahi", "0725967528", "aabdullahinur@gmail.com")
 
     def tearDown(self):
 
@@ -26,7 +26,7 @@ class TestUser(unittest.TestCase):
     def test_save_multiple_user(self):
 
         self.new_user.save_user()
-        test_user = User("Abdullahinur", "Abdullahi", "aabdullahinur@gmail.com")
+        test_user = User("Abdullahinur", "Abdullahi", "0725967528", "aabdullahinur@gmail.com")
         test_user.save_user()
         self.assertEqual(len(User.user_list), 2)
 
@@ -42,20 +42,20 @@ class TestUser(unittest.TestCase):
     def test_find_user_by_firstName(self):
 
         self.new_user.save_user()
-        test_user = User("Abdullahinur", "Abdullahi", "aabdullahinur@gmail.com")
+        test_user = User("Abdullahinur", "Abdullahi", "0725967528", "aabdullahinur@gmail.com")
         test_user.save_user()
 
-        found_user = User.find_by_firstName("Abdullahinur")
+        found_user = User.find_by_firstName("")
 
         self.assertEqual(found_user.email, test_user.email)
 
     def test_user_exists(self):
 
         self.new_user.save_user()
-        test_user = User("Abdullahinur", "Abdullahi", "aabdullahinur@gmail.com")
+        test_user = User("Abdullahinur", "0725967528", "Abdullahi", "aabdullahinur@gmail.com")
         test_user.save_user()
 
-        user_exists = User.user_exist("Abdullahinur")
+        user_exists = User.user_exist("0725967528")
 
         self.assertTrue(user_exists)
 

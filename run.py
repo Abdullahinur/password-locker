@@ -84,32 +84,14 @@ def main():
             print("Last name .....")
             last_name = input()
 
+            print("User name .....")
+            user_name = input()
+
             print("Phone number .....")
             phone_number = input()
 
             print("Email address .......")
             email = input()
-
-            print("Select a Password")
-            created_user_password = input()
-
-            print("Confirm Your Password")
-            confirm_password = input()
-
-            while confirm_password != created_user_password:
-                print("Sorry your passwords did not match!")
-                print("Enter a password")
-                created_user_password = input()
-                print("Confirm Your Password")
-                confirm_password = input()
-            else:
-                print(f"Congratulations {first_name}! You have created your new account.")
-                print('\n')
-                print("Proceed to Log In to your Account")
-                print("Username")
-                entered_userName = input()
-                print("Your Password")
-                entered_password = input()
 
             # Create and save new contact
             save_users(create_user(first_name, last_name, phone_number, email))
