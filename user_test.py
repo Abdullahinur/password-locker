@@ -1,5 +1,6 @@
 import unittest
 from user import User
+import pyperclip
 
 
 class TestUser(unittest.TestCase):
@@ -26,14 +27,14 @@ class TestUser(unittest.TestCase):
     def test_save_multiple_user(self):
 
         self.new_user.save_user()
-        test_user = User("Abdullahinur", "Abdullahi", "0725967528", "aabdullahinur@gmail.com")
+        test_user = User("Abdullahinur", "Abdullahi", "0725967528",  "aabdullahinur@gmail.com")
         test_user.save_user()
         self.assertEqual(len(User.user_list), 2)
 
     def test_delete_user(self):
 
         self.new_user.save_user()
-        test_user = User("Abdullahinur", "Abdullahi", "aabdullahinur@gmail.com")
+        test_user = User("Abdullahinur", "Abdullahi", "0725967528", "aabdullahinur@gmail.com")
         test_user.save_user()
 
         self.new_user.delete_user()
@@ -45,7 +46,7 @@ class TestUser(unittest.TestCase):
         test_user = User("Abdullahinur", "Abdullahi", "0725967528", "aabdullahinur@gmail.com")
         test_user.save_user()
 
-        found_user = User.find_by_firstName("")
+        found_user = User.find_by_number("0725967528")
 
         self.assertEqual(found_user.email, test_user.email)
 
@@ -61,14 +62,14 @@ class TestUser(unittest.TestCase):
 
     def test_display_all_users(self):
 
-        self.assertEqual(User.display_user(), User.user_list)
+        self.assertEqual(User.display_users(), User.user_list)
 
-    # def test_copy_email(self):
-    #
-    #     self.new_user.save_user()
-    #     User.copy_email("")
-    #
-    #     self.assertEqual(self.new_user.email, pyperclip.paste())
+    def test_copy_email(self):
+
+        self.new_user.save_user()
+        User.copy_email("0725967528")
+
+        self.assertEqual(self.new_user.email, pyperclip.paste())
 
 
 if __name__ == '__main__':
